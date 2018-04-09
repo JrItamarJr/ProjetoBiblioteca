@@ -31,6 +31,7 @@ public final class FormLogin extends javax.swing.JFrame {
         jLabelFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login ");
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -191,7 +192,7 @@ public final class FormLogin extends javax.swing.JFrame {
                 salva.setUser("");
                 salva.Salvar();
             }
-            FormPrincipal tela1 = new FormPrincipal(jTextUser.getText() + "   -   ADMINISTRADOR");
+            FormPrincipal tela1 = new FormPrincipal(jTextUser.getText());
             tela1.setVisible(true);
             this.dispose();
         } else {
