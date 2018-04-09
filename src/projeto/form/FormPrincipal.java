@@ -18,7 +18,6 @@ public class FormPrincipal extends javax.swing.JFrame {
     public FormPrincipal(String usuario) {
         initComponents();
         inicializa();
-        jLabelLogado.setText(usuario);
     }
 
     private FormPrincipal() {
@@ -56,7 +55,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         jLabelDate = new javax.swing.JLabel();
         jLabelTime = new javax.swing.JLabel();
         jSeparatorUser = new javax.swing.JSeparator();
-        jLabelLogado = new javax.swing.JLabel();
+        jLabelLogado1 = new javax.swing.JLabel();
         jSeparatorUserFinal = new javax.swing.JSeparator();
         jButtonUser = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -73,12 +72,6 @@ public class FormPrincipal extends javax.swing.JFrame {
         jMenu10 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Projeto Biblioteca v1");
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
-        });
 
         jDesktopPaneFundo.setLayer(jLabelimgFundo, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -185,7 +178,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         jSeparatorUser.setForeground(new java.awt.Color(0, 0, 0));
         jSeparatorUser.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabelLogado.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelLogado1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         jSeparatorUserFinal.setForeground(new java.awt.Color(0, 0, 0));
         jSeparatorUserFinal.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -214,7 +207,7 @@ public class FormPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparatorUser, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelLogado1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparatorUserFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 485, Short.MAX_VALUE)
@@ -242,7 +235,7 @@ public class FormPrincipal extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabelDataIcon, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jSeparatorUser, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabelLogado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelLogado1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jSeparatorUserFinal, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jSeparatorData, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jSeparatorDataFinal, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -325,10 +318,6 @@ public class FormPrincipal extends javax.swing.JFrame {
         configuser.setVisible(true);
     }//GEN-LAST:event_jButtonUserActionPerformed
 
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        DateTimer();
-    }//GEN-LAST:event_formWindowOpened
-
 
     public static void main(String args[]) {
         try {
@@ -374,7 +363,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelDataIcon;
     private javax.swing.JLabel jLabelDate;
-    private javax.swing.JLabel jLabelLogado;
+    private javax.swing.JLabel jLabelLogado1;
     private javax.swing.JLabel jLabelTime;
     private javax.swing.JLabel jLabelimgFundo;
     private javax.swing.JMenu jMenu1;
@@ -401,6 +390,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 //################################################   CODIGOS DE PROGRAMAÇÃO   ############################################################//
     public final void inicializa() {
+        
         setExtendedState(MAXIMIZED_BOTH);
         fundo();
         setIcon();
@@ -429,7 +419,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         //  Pega o caminho da imagem  //
         //  Define a imagem e o tamanho dela, nesse caso o tamanho da imagem é o tamnho do Form  //
         //  Define onde a imagem vai ficar, nesse caso no jLabelFundo  //
-        ImageIcon ImgFundo = new ImageIcon(getClass().getResource("/projeto/backgroud/4e2a08c9b792186dad6cda7dd42e22f9_x2c3d31af01bc4fddbc964153c17db4f4_03112016151843_.jpg"));
+        ImageIcon ImgFundo = new ImageIcon(getClass().getResource("/projeto/backgroud/regulamento-da-biblioteca-colegio-salesiano-dom-bosco-cidade-alta.png"));
         Image imgFundoPanel = ImgFundo.getImage();
         jLabelimgFundo.setIcon(new ImageIcon(imgFundoPanel));
     }
@@ -439,7 +429,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/projeto/backgroud/if_Folder_132707.png")));
     }
 
-    public void impedeJanelaDuplicada(JInternalFrame frame) {
+    public void comandoDuplicado(JInternalFrame frame) {
         for (JInternalFrame internal : jDesktopPaneFundo.getAllFrames()) {
             if (internal.getClass().toString().equalsIgnoreCase(frame.getClass().toString())) {
                 return;
